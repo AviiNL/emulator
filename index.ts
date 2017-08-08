@@ -14,7 +14,7 @@ export class Emulator extends Modular {
             this.modules[i].forEach((m) => {
 
                 if (typeof m.init !== 'function') {
-                    throw new Error('init(emulator) not defined');
+                    throw new Error('init(parent: Modular) not defined');
                 }
 
                 m.init(this);
