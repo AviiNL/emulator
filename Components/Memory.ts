@@ -1,9 +1,9 @@
-import {Modular} from "../Devices/Modular";
+import {Modular} from "../Abstractions/Modular";
 import {MMAP_BLOCK_BITS, MMAP_BLOCK_SIZE} from "../Global/Constants";
 import {dbg_assert} from "../Global/Log";
 import {DEBUG} from "../Global/Config";
-import {CPU} from "./CPU";
-import {Component} from "./Component";
+import {CPU} from "../Abstractions/CPU";
+import {Component} from "../Abstractions/Component";
 
 const bytes: any = require('bytes');
 

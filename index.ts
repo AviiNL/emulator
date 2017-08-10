@@ -1,4 +1,4 @@
-import {Modular} from "./Devices/Modular";
+import {Modular} from "./Abstractions/Modular";
 
 export class Emulator extends Modular {
 

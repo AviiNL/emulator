@@ -5,7 +5,7 @@ export abstract class CPU extends ModularComponent {
 
     constructor() {
         super(false);
-
         this.name = 'cpu';
     }
+
 }

@@ -1,5 +1,5 @@
-import {CPU} from "./CPU";
-import {Modular} from "../Devices/Modular";
+import {CPU} from "../Abstractions/CPU";
+import {Modular} from "../Abstractions/Modular";
 
 export class x86CPU extends CPU {
 

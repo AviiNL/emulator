@@ -1,5 +1,5 @@
 import {Module} from "../Interfaces/Module";
-import {Modular} from "../Devices/Modular";
+import {Modular} from "./Modular";
 import {Emulator} from "../index";
 
 export abstract class ModularComponent extends Modular implements Module {

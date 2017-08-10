@@ -1,0 +1,3 @@
+REPOSITORY = 'Emulator'
+REVIEWBOARD_URL = "https://reviewboard.avii.nl"
+TRACKING_BRANCH = "origin/master"
