@@ -10,7 +10,6 @@ const emu = new Emulator();
 // cpu.addModule(new PIT());
 // cpu.addModule(new RTC());
 
-emu.addModule(new Bus());
 emu.addModule(new x86CPU(true));
 emu.addModule(new Memory('64MB'));
 

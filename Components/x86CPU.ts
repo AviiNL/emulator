@@ -1,9 +1,14 @@
 import {CPU} from "../Abstractions/CPU";
 import {Modular} from "../Abstractions/Modular";
+import {ISA} from "./x86CPU/ISA";
+import {Bus} from "./Bus";
+import {BusConnector} from "./BusConnector";
 
 export class x86CPU extends CPU {
 
     emulator: Modular;
+    bus: BusConnector;
+
     load_default_modules: boolean;
 
     constructor(load_default_modules: boolean = true) {
@@ -14,14 +19,19 @@ export class x86CPU extends CPU {
 
     init(parent: Modular) {
         this.emulator = parent;
-        console.log(`Initializing x86 CPU`);
+
+        this.bus = (this.emulator.getModules('bus').first() as Bus).emulator_bus;
 
         if (this.load_default_modules) {
             this.loadDefaultModules();
         }
+
+        this.initModules();
     }
 
     loadDefaultModules() {
+
+        this.addModule(new ISA());
 
         // this.addModule(new RTC());
         // this.addModule(new RTC());

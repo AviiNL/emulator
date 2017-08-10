@@ -5,6 +5,10 @@ export class BusConnector {
     pair: BusConnector;
     listeners: { [name: string]: Array<{ fn: any, thisArg: any }> };
 
+    constructor() {
+        this.listeners = {};
+    }
+
     register(name: string, fn: (value: any) => void, registerer: any) {
         let listeners = this.listeners[name];
 
@@ -30,14 +34,16 @@ export class BusConnector {
         });
     }
 
-    send(name: string, value: any) {
+    send(name: string, value?: any) {
         if (!this.pair) {
+            console.error("Not a pair!");
             return;
         }
 
         let listeners = this.pair.listeners[name];
 
         if (typeof listeners === 'undefined') {
+            console.error("No listeners");
             return;
         }
 

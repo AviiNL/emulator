@@ -1,4 +1,5 @@
 import {Modular} from "./Abstractions/Modular";
+import {Bus} from "./Components/Bus";
 
 export class Emulator extends Modular {
 
@@ -6,19 +7,19 @@ export class Emulator extends Modular {
         super(true);
     }
 
+
     powerOn() {
+        console.log(`Emulator starting...`);
+
+        this.loadDefaultModules();
+
         // Initialize all added modules
-        for (let i in this.modules) {
-            if (!this.modules.hasOwnProperty(i)) continue;
+        this.initModules();
+    }
 
-            this.modules[i].forEach((m) => {
-
-                if (typeof m.init !== 'function') {
-                    throw new Error('init(parent: Modular) not defined');
-                }
-
-                m.init(this);
-            });
+    loadDefaultModules() {
+        if (!this.modules.hasOwnProperty('bus')) {
+            this.addModule(new Bus());
         }
     }
 

@@ -18,7 +18,7 @@ export class Bus extends Component {
     }
 
     init(parent: Modular) {
-        console.log(`Initializing Bus`);
+
     }
 
 }

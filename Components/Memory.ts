@@ -68,7 +68,7 @@ export class Memory extends Component {
     init(parent: Modular): void {
         this.cpu = parent.modules.cpu[0] as CPU;
 
-        console.log(`Initializing memory (${this.size} bytes)`);
+        console.log(`Initializing Memory (${this.size} bytes)`);
     }
 
     debug_read(addr: number, size: number, is_write?: boolean) {

@@ -1,5 +1,5 @@
 import {Module} from "../Interfaces/Module";
-import {Emulator} from "../index";
+import {Modular} from "./Modular";
 
 export abstract class Component implements Module {
 
@@ -9,7 +9,7 @@ export abstract class Component implements Module {
         this.name = this.constructor.name;
     }
 
-    init(emu: Emulator) {
+    init(parent: Modular) {
 
     }
 

@@ -20,22 +20,11 @@ export class Util {
     }
 
     static pad0(str: any, len: number) {
-        str = str ? str + "" : "";
-
-        while (str.length < len) {
-            str = "0" + str;
-        }
-
-        return str;
+        return (("0".repeat(len) + (str)).substr(-Math.abs(len)));
     }
 
-    static hex(n: number, len: number) {
-        let str = "";
-        if (n) {
-            str = n.toString(16);
-        }
-
-        return "0x" + Util.pad0(str.toUpperCase(), len || 1);
+    static hex(n: number, len: number = 1) {
+        return "0x" + Util.pad0(n.toString(16).toUpperCase(), len);
     }
 
     static has_rand_int() {
