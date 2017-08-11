@@ -4,6 +4,7 @@ import {dbg_assert} from "../Global/Log";
 import {DEBUG} from "../Global/Config";
 import {CPU} from "../Abstractions/CPU";
 import {Component} from "../Abstractions/Component";
+import {serialize} from "../Helpers/Serializer";
 
 const bytes: any = require('bytes');
 
@@ -16,7 +17,11 @@ const A20_MASK32 = ~(1 << 20 - 2);
 export class Memory extends Component {
 
     cpu: CPU;
+
+    @serialize()
     size: number;
+
+    @serialize()
     mem8: Uint8Array;
     mem16: Uint16Array;
     mem32s: Int32Array;
@@ -71,7 +76,7 @@ export class Memory extends Component {
         console.log(`Initializing Memory (${this.size} bytes)`);
     }
 
-    debug_read(addr: number, size: number, is_write?: boolean) {
+    debug_read(addr: number, size?: number, is_write?: boolean) {
         if (!DEBUG) {
             return;
         }

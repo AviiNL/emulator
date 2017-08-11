@@ -50,6 +50,12 @@ export abstract class Modular {
 
     }
 
+    clearModules() {
+        for(let module in this.modules) {
+            delete this.modules[module];
+        }
+    }
+
     // @todo[wait]: T is not accessible within the method
     // getModules<T>(): T[] | null {
     //     for (let i in this.modules) {
