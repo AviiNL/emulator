@@ -17,7 +17,6 @@ export class x86CPU extends CPU {
         super();
         this.load_default_modules = load_default_modules;
         this.a20_enabled = true;
-
     }
 
     init(parent: Modular) {

@@ -1,8 +1,10 @@
 import {Module} from "../Interfaces/Module";
 import {List} from "../Helpers/List";
+import {serialize} from "../Helpers/Serializer";
 
 export abstract class Modular {
 
+    @serialize()
     private allow_duplicated_modules: boolean;
 
     public readonly modules: { [key: string]: List<Module> } = {};
@@ -76,5 +78,4 @@ export abstract class Modular {
             }
         }
     }
-
 }

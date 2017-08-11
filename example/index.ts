@@ -12,6 +12,6 @@ const emu = new Emulator();
 let cpu = new x86CPU(true);
 
 emu.addModule(cpu);
-emu.addModule(new Memory('64MB'));
+emu.addModule(new Memory('1kb'));
 
 emu.powerOn();

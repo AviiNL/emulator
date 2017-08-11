@@ -51,12 +51,11 @@ export class Serializer {
             };
         }
 
-        return JSON.stringify(data);
+        return data;
     }
 
     static deserialize(thisOf: any, data: any) {
-        data = JSON.parse(data);
-
+        
         for (let i in data) {
             if (!data.hasOwnProperty(i)) continue;
             if (!thisOf.hasOwnProperty(i)) continue;
