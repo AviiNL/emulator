@@ -18,18 +18,16 @@ export class Memory extends Component {
 
     cpu: CPU;
 
-    @serialize()
-    size: number;
+    @serialize() size: number;
 
-    @serialize()
-    mem8: Uint8Array;
-    mem16: Uint16Array;
-    mem32s: Int32Array;
+    @serialize() mem8: Uint8Array;
+    @serialize() mem16: Uint16Array;
+    @serialize() mem32s: Int32Array;
 
-    memory_map_read8: Array<any>;
-    memory_map_write8: Array<any>;
-    memory_map_read32: Array<any>;
-    memory_map_write32: Array<any>;
+    @serialize() memory_map_read8: Array<any>;
+    @serialize() memory_map_write8: Array<any>;
+    @serialize() memory_map_read32: Array<any>;
+    @serialize() memory_map_write32: Array<any>;
 
     constructor(_size: number | string) {
         super();

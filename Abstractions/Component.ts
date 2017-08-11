@@ -1,10 +1,9 @@
 import {Module} from "../Interfaces/Module";
 import {Modular} from "./Modular";
-import {serialize, Serializer} from "../Helpers/Serializer";
+import {Serializer} from "../Helpers/Serializer";
 
 export abstract class Component implements Module {
 
-    @serialize()
     name: string;
 
     constructor() {

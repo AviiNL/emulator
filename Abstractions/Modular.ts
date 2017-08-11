@@ -43,17 +43,11 @@ export abstract class Modular {
 
     getModule(name:string) : Module {
         if(this.allow_duplicated_modules) {
-            throw new Error("Duplicate modules is enabled, use getModules(name: string) instead");
+            throw new Error('Duplicate modules is enabled, use `getModules(name: string): List<Module>` instead');
         }
 
         return this.getModules(name).first();
 
-    }
-
-    clearModules() {
-        for(let module in this.modules) {
-            delete this.modules[module];
-        }
     }
 
     // @todo[wait]: T is not accessible within the method
