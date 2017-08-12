@@ -4,6 +4,7 @@ import {ISA} from "./x86CPU/ISA";
 import {Bus} from "./Bus";
 import {BusConnector} from "./BusConnector";
 import {serialize} from "../Helpers/Serializer";
+import {RTC} from "./x86CPU/RTC";
 
 export class x86CPU extends CPU {
 
@@ -34,8 +35,7 @@ export class x86CPU extends CPU {
     loadDefaultModules() {
 
         this.addModule(new ISA());
-
-        // this.addModule(new RTC());
+        this.addModule(new RTC());
         // this.addModule(new RTC());
         // this.addModule(new RTC());
 

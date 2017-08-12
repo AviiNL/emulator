@@ -1,17 +1,13 @@
 import {Emulator} from "../index";
 import {x86CPU} from "../Components/x86CPU";
 import {Memory} from "../Components/Memory";
+import {Bios} from "../Components/Bios";
 
 const emu = new Emulator();
 
-// internal, this will already be done if they are not added through here
-// cpu.addModule(new IO());
-// cpu.addModule(new PIT());
-// cpu.addModule(new RTC());
+emu.addModule(new x86CPU());
+emu.addModule(new Memory('64mb'));
 
-let cpu = new x86CPU(true);
-
-emu.addModule(cpu);
-emu.addModule(new Memory('1kb'));
+emu.addModule(new Bios(`${__dirname}/images/seabios.bin`));
 
 emu.powerOn();

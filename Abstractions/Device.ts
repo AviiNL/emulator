@@ -1,24 +1,5 @@
-import {Module} from "../Interfaces/Module";
-import {Emulator} from "../index";
-import {Serializer} from "../Helpers/Serializer";
+import {Component} from "./Component";
 
-export abstract class Device implements Module {
+export abstract class Device extends Component {
 
-    name:string;
-
-    constructor() {
-        this.name = this.constructor.name;
-    }
-
-    init(emu: Emulator) {
-
-    }
-
-    getState() {
-        return Serializer.serialize(this);
-    }
-
-    setState(state: any) {
-        Serializer.deserialize(this, state);
-    }
 }
