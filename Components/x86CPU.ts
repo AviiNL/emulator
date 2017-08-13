@@ -35,7 +35,7 @@ export class x86CPU extends CPU {
     loadDefaultModules() {
 
         this.addModule(new ISA());
-        this.addModule(new RTC());
+        // this.addModule(new RTC());
         // this.addModule(new RTC());
         // this.addModule(new RTC());
 
