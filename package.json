@@ -10,7 +10,8 @@
     "bytes": "^2.5.0"
   },
   "devDependencies": {
-    "@types/node": "^8.0.19"
+    "@types/node": "^8.0.19",
+    "electron": "^1.7.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
