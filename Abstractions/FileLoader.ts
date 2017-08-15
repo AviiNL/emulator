@@ -5,7 +5,7 @@ import * as fs from "fs";
 import {serialize} from "../Helpers/Serializer";
 import * as path from "path";
 
-export class StorageDevice extends Device {
+export class FileLoader extends Device {
 
     emulator: Emulator;
 

@@ -1,5 +1,5 @@
-import {StorageDevice} from "../Abstractions/StorageDevice";
+import {FileLoader} from "../Abstractions/FileLoader";
 
-export class Harddisk extends StorageDevice {
+export class Harddisk extends FileLoader {
 
 }

@@ -92,6 +92,10 @@ export class RTC extends Component {
 
         let io = cpu.getModule('io') as IO;
 
+        if(io === null) {
+            throw new Error("RTC has a dependency on 'IO' but 'IO' is not added as a module");
+        }
+
         io.register_read(0x71, this, this.cmos_port_read);
         io.register_write(0x71, this, this.cmos_port_write);
     }

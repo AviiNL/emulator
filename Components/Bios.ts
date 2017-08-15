@@ -4,7 +4,7 @@ import {Emulator} from "../index";
 import * as fs from "fs";
 import {serialize, Serializer} from "../Helpers/Serializer";
 import * as path from "path";
-import {StorageDevice} from "../Abstractions/StorageDevice";
+import {FileLoader} from "../Abstractions/FileLoader";
 
-export class Bios extends StorageDevice {
+export class Bios extends FileLoader {
 }

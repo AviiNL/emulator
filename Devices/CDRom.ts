@@ -1,5 +1,5 @@
-import {StorageDevice} from "../Abstractions/StorageDevice";
+import {FileLoader} from "../Abstractions/FileLoader";
 
-export class CDRom extends StorageDevice {
+export class CDRom extends FileLoader {
 
 }

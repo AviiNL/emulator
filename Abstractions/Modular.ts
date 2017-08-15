@@ -33,11 +33,8 @@ export abstract class Modular {
         name = name.toLowerCase();
 
         if (!this.modules.hasOwnProperty(name)) {
-            throw new Error(`Module '${name}' not found on ${this.constructor.name}`);
-        }
-
-        if (this.modules[name].length === 0) {
-            throw new Error(`Module '${name}' found but has no elements`);
+            console.warn(`Module ${name} not found on ${this.constructor.name}`);
+            return new List<Module>();
         }
 
         return this.modules[name];

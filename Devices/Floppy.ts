@@ -1,5 +1,5 @@
-import {StorageDevice} from "../Abstractions/StorageDevice";
+import {FileLoader} from "../Abstractions/FileLoader";
 
-export class Floppy extends StorageDevice {
+export class Floppy extends FileLoader {
 
 }
